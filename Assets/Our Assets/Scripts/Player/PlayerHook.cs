@@ -151,6 +151,12 @@ public class PlayerHook : MonoBehaviour
     {
         if (currentCollectable != null)
         {
+            //if a fish was collected, send an event saying a fish was collected
+            if(/*currentCollectable is FishCollectable*/true)
+            {
+                FishingGameManager.OnCollectFish();
+            }
+
             currentCollectable.DestroyCollectable();
             currentCollectable = null;
         }
