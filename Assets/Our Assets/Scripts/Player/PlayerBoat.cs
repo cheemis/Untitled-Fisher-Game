@@ -36,6 +36,13 @@ public class PlayerBoat : MonoBehaviour
     private Rigidbody rb;
     Animator anim;
 
+    [Space(30)]
+
+    //other variables
+    [SerializeField]
+    private PlayerHook hook;
+
+
 
     // ================================== //
     // ======= BUILT-IN FUNCTIONS ======= //
@@ -45,6 +52,7 @@ public class PlayerBoat : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        hook = GetComponentInChildren<PlayerHook>();
     }
 
     // Update is called once per frame
@@ -53,6 +61,14 @@ public class PlayerBoat : MonoBehaviour
         if (canControlBoat)
         {
             ReadInput();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Drop Off")
+        {
+            hook.EnterDropOff();
         }
     }
 
