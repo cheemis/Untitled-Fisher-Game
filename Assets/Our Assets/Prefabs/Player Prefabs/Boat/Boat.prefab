@@ -14780,6 +14780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f741af933274f6d4c92eea3a65d97243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offsetX: 90
+  offsetZ: 180
 --- !u!1 &6016239393807243532
 GameObject:
   m_ObjectHideFlags: 0
@@ -14807,13 +14809,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6016239393807243532}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.36333972, y: -0, z: -0, w: 0.9316568}
-  m_LocalPosition: {x: 0, y: 9.5, z: -10.1}
+  m_LocalRotation: {x: 0.38241744, y: -0, z: -0, w: 0.92398965}
+  m_LocalPosition: {x: 0, y: 13.2, z: -30.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 986438387679827465}
-  m_LocalEulerAnglesHint: {x: 42.611, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 44.967, y: 0, z: 0}
 --- !u!20 &1607819582500547419
 Camera:
   m_ObjectHideFlags: 0
@@ -14823,8 +14825,8 @@ Camera:
   m_GameObject: {fileID: 6016239393807243532}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.40784314, g: 0.7607843, b: 0.827451, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -14849,7 +14851,7 @@ Camera:
   far clip plane: 1000
   field of view: 90
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

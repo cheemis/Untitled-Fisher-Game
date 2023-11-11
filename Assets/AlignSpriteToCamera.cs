@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class AlignSpriteToCamera : MonoBehaviour
 {
+
+    [SerializeField]
+    private float offsetX = 0f;
+    [SerializeField]
+    private float offsetZ = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +19,6 @@ public class AlignSpriteToCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.Euler(90f, Camera.main.transform.rotation.eulerAngles.y, 180f);
+        transform.rotation = Quaternion.Euler(offsetX + Camera.main.transform.rotation.eulerAngles.x, Camera.main.transform.rotation.eulerAngles.y, offsetZ);
     }
 }
