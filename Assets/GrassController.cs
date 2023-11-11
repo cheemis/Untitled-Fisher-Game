@@ -9,7 +9,7 @@ public class GrassController : MonoBehaviour
 
     void Start()
     {
-        
+        lifeTime = Random.Range(5f, 15f);
     }
 
     // Update is called once per frame
