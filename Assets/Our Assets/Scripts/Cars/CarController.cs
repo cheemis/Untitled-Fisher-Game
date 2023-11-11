@@ -31,7 +31,10 @@ public class CarController : MonoBehaviour
         MoveCar();
         //agent.SetDestination(currentTarget.position);
 
-
+        //if (Input.GetKeyUp(KeyCode.F))
+        //{
+        //    DropTrash();
+        //}
     }
 
     public void MoveCar()
@@ -60,16 +63,15 @@ public class CarController : MonoBehaviour
         //Debug.Log("dropChance: " + currentPathNode.dropTrashChance);
         if (rngValue > currentPathNode.dropTrashChance) return;
         GameObject trashPrefab = TrashManager.Instance.ReturnRandomTrash();
-        Instantiate(trashPrefab, trashSpawner.position,Quaternion.identity);
 
-        TrashCollectable droppedTrash = trashPrefab.GetComponent<TrashCollectable>();
+        TrashCollectable droppedTrash = Instantiate(trashPrefab, trashSpawner.position, Quaternion.identity).GetComponent<TrashCollectable>();
+        droppedTrash.ThrowTrash();
         Debug.Log(droppedTrash.trashType);
         if (droppedTrash.trashType == TrashCollectable.TrashType.Large)
         {
             canDropTrashes = false;
         }
 
-        //Instantiate();
     }
 
 }

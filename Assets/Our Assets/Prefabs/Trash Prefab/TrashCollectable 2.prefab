@@ -167,7 +167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2339614228115165916, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
       propertyPath: m_Size.z
-      value: 9.3526535
+      value: 2.3615696
       objectReference: {fileID: 0}
     - target: {fileID: 2339614228115165916, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
       propertyPath: m_Center.x
@@ -175,15 +175,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2339614228115165916, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
       propertyPath: m_Center.y
-      value: -0.05208057
+      value: -0.05208063
       objectReference: {fileID: 0}
     - target: {fileID: 2339614228115165916, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
       propertyPath: m_Center.z
-      value: 0.49084282
+      value: -0.03317988
       objectReference: {fileID: 0}
     - target: {fileID: 2585742816443381541, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
       propertyPath: m_Name
       value: TrashCollectable 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602508269829013010, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602508269829013010, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602508269829013010, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3663641754336792574, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
       propertyPath: m_LocalScale.z

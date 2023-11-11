@@ -146,6 +146,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrashCollectable
       objectReference: {fileID: 0}
+    - target: {fileID: 3602508269829013010, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
+      propertyPath: m_Mass
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602508269829013010, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602508269829013010, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3663641754336792574, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.14919

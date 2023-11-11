@@ -7,26 +7,24 @@ public class TrashCollectable : Collectable
 {
     public enum TrashType { Small, Medium, Large };
     public TrashType trashType = TrashType.Medium;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        //switch(trashType)
-        //{
-        //    case TrashType.Small:
-        //        transform.localScale = Vector3.one;
-        //        break;
-        //    case TrashType.Medium:
-        //        transform.localScale = new Vector3(5,5,5);
-        //        break;
-        //    case TrashType.Large:
-        //        transform.localScale = new Vector3(10,10,10);
-        //        break;
-        //}
+  
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void ThrowTrash()
+    {
+        rb = gameObject.GetComponent<Rigidbody>();
+        //rb.AddForce(Vector3.right * 100, ForceMode.Impulse);
+        Vector3 direction = (TrashManager.Instance.pond.position - transform.position).normalized;
+        rb.velocity = direction * 50;
     }
 }

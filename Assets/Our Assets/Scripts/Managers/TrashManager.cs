@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrashManager : UnitySingleton<TrashManager>
 {
     public List<GameObject> trashesInResource = new List<GameObject>();
+    public Transform pond;
     // Start is called before the first frame update
     void Start()
     {
