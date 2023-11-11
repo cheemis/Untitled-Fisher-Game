@@ -13,8 +13,6 @@ public class PlayerBoat : MonoBehaviour
     private float acceleration = 50f;
     [SerializeField]
     private float maxSpeed = 1000f;
-    //[SerializeField]
-    //private float dragSpeed;
 
     [Space(30)]
 
@@ -36,13 +34,25 @@ public class PlayerBoat : MonoBehaviour
 
     //component variables
     private Rigidbody rb;
+    Animator anim;
+
+    [Space(30)]
+
+    //other variables
+    [SerializeField]
+    private PlayerHook hook;
 
 
+
+    // ================================== //
+    // ======= BUILT-IN FUNCTIONS ======= //
+    // ================================== //
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        hook = GetComponentInChildren<PlayerHook>();
     }
 
     // Update is called once per frame
@@ -51,14 +61,22 @@ public class PlayerBoat : MonoBehaviour
         if (canControlBoat)
         {
             ReadInput();
-
-            // == testing purposes == //
-            if(Input.GetKeyDown(KeyCode.F))
-            {
-                StartCoroutine(SlowDownBoat());
-            }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Drop Off")
+        {
+            hook.EnterDropOff();
+        }
+    }
+
+
+
+    // ===================================== //
+    // ======== TRAVERSAL FUNCTIONS ======== //
+    // ===================================== //
 
     private void ReadInput()
     {
@@ -92,7 +110,6 @@ public class PlayerBoat : MonoBehaviour
         rb.velocity = new Vector3(x,y,z);
     }
 
-
     private void RotatePlayer(float rotationDirection)
     {
         Quaternion currentRotation = rb.rotation;
@@ -105,21 +122,60 @@ public class PlayerBoat : MonoBehaviour
         rb.MoveRotation(currentRotation * Quaternion.Euler(0, currentRotationSpeed, 0));
     }
 
+
+
+    // ===================================== //
+    // ======= CONTROLLING FUNCTIONS ======= //
+    // ===================================== //
+
+    public void StopBoat()
+    {
+        if(canControlBoat)
+        {
+            StartCoroutine(SlowDownBoat());
+        }
+    }
+
+    public void StartBoat()
+    {
+        canControlBoat = true;
+    }
+
+    public void StartRockingBoat()
+    {
+
+    }
+
+    public void StopRockingBoat()
+    {
+
+    }
+
+
+
+    // ===================================== //
+    // ============ COROUTINES ============= //
+    // ===================================== //
+
+    //This Coroutine slows down the player to zero
     IEnumerator SlowDownBoat()
     {
         canControlBoat = false;
-        //Vector3 originalVelocity = 
+        Vector3 originalVelocity = rb.velocity;
+
+        Debug.Log("Started Slowing Down");
 
         while(rb.velocity.magnitude > .1)
         {
-            //Vector3.Lerp()
-            rb.velocity -= -rb.velocity * slowDownSpeed * Time.deltaTime;
+            rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, slowDownSpeed * Time.deltaTime);
             yield return null;
         }
+        rb.velocity = Vector3.zero;
 
-        canControlBoat = true;
+        Debug.Log("Finished Slowing Down");
 
         yield return null;
+        StartBoat();
     }
 
 
