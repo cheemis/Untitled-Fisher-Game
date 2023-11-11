@@ -48,7 +48,16 @@ public class PlayerBoat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ReadInput();
+        if (canControlBoat)
+        {
+            ReadInput();
+
+            // == testing purposes == //
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                StartCoroutine(SlowDownBoat());
+            }
+        }
     }
 
     private void ReadInput()
@@ -99,14 +108,18 @@ public class PlayerBoat : MonoBehaviour
     IEnumerator SlowDownBoat()
     {
         canControlBoat = false;
+        //Vector3 originalVelocity = 
+
         while(rb.velocity.magnitude > .1)
         {
-            rb.velocity -= slowDownSpeed;
+            //Vector3.Lerp()
+            rb.velocity -= -rb.velocity * slowDownSpeed * Time.deltaTime;
             yield return null;
         }
+
+        canControlBoat = true;
+
         yield return null;
-
-
     }
 
 
