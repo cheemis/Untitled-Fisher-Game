@@ -16,7 +16,7 @@ public class CarManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             SpawnNewCars();
         }
@@ -26,4 +26,6 @@ public class CarManager : MonoBehaviour
     {
         Instantiate(carPrefab,carSpawner.position,Quaternion.identity);
     }
+
+
 }
