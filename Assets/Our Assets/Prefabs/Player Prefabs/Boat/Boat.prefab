@@ -14781,8 +14781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f741af933274f6d4c92eea3a65d97243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetX: 90
-  offsetZ: 180
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &6016239393807243532
 GameObject:
   m_ObjectHideFlags: 0
@@ -14811,7 +14810,7 @@ Transform:
   m_GameObject: {fileID: 6016239393807243532}
   serializedVersion: 2
   m_LocalRotation: {x: 0.38241744, y: -0, z: -0, w: 0.92398965}
-  m_LocalPosition: {x: 0, y: 13.2, z: -12.65}
+  m_LocalPosition: {x: 0, y: 18.4, z: -7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14850,7 +14849,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 90
+  field of view: 88
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -15245,7 +15244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2469753805875686875, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.7199011
+      value: -0.71989965
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
