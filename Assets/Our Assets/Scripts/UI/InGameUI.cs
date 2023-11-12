@@ -44,7 +44,7 @@ public class InGameUI : MonoBehaviour
     {
         timeCircle = GetComponentInChildren<Image>();
         tmp = GetComponentInChildren<TextMeshProUGUI>();
-
+        StartCoroutine(PlayAmbientSound());
         //set intial time
         timeCircle.fillAmount = timeLeft;
         timeCircle.color = gradient.Evaluate(timeLeft);
@@ -66,6 +66,13 @@ public class InGameUI : MonoBehaviour
         }
     }
 
+    IEnumerator PlayAmbientSound()
+    {
+        AudioManager.Instance.Play("Forest");
+        yield return new WaitForSecondsRealtime(30);
+        AudioManager.Instance.Stop("Forest", true);
+        AudioManager.Instance.Play("City");
+    }
     // ===================================== //
     // ===== LISTENING/EVENT FUNCTIONS ===== //
     // ===================================== //
@@ -87,7 +94,7 @@ public class InGameUI : MonoBehaviour
         gameOver = true;
         timeCircle.fillAmount = 0;
         FishingGameManager.OnGameOver();
-
+        AudioManager.Instance.Play("GameOver");
         for (int i = 0; i < transform.childCount - 1; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
@@ -146,6 +153,7 @@ public class InGameUI : MonoBehaviour
     public void ResetGame()
     {
         Debug.Log("clicked reset game");
+        AudioManager.Instance.Stop("GameOver");
         SceneManager.LoadSceneAsync(1);
     }
 
