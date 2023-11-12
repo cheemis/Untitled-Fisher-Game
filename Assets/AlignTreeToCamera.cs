@@ -13,6 +13,12 @@ public class AlignTreeToCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 cameraPos = Camera.main.transform.position;
+
+        Vector3 lookAtDir = new Vector3(cameraPos.x,
+                                        transform.rotation.eulerAngles.y,
+                                        cameraPos.z);
+
         transform.LookAt(Camera.main.transform.position, Vector3.up);
     }
 }

@@ -14573,7 +14573,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4122443826425089234}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 1
   m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -14604,10 +14604,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89698f1358aee7b419abb633c0f2728c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 500
-  maxSpeed: 12
-  rotationSpeed: 100
-  maxRotationSpeed: 20
+  acceleration: 5000
+  maxSpeed: 15
+  rotationSpeed: 150
+  maxRotationSpeed: 30
   slowDownSpeed: 50
   hook: {fileID: 0}
 --- !u!65 &1281763227066581878
@@ -14715,7 +14715,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.79, z: -0.209}
   m_LocalScale: {x: 0.50503, y: 0.50503, z: 0.50503}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5714565113214589914}
   m_Father: {fileID: 986438387679827465}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 75.001}
 --- !u!33 &4684366155390138946
@@ -14999,6 +15000,37 @@ Transform:
   - {fileID: 1470692216253533047}
   m_Father: {fileID: 5205957830176713649}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8749263813297959730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5714565113214589914}
+  m_Layer: 0
+  m_Name: Latch Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5714565113214589914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8749263813297959730}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.77, y: 0, z: -3.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8157262074982418531}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2495480564733014434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15203,13 +15235,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2469753805875686875, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.4927389
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469753805875686875, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.984366
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469753805875686875, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7199011
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1089407634356830414, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7041261623620158023}
   m_SourcePrefab: {fileID: 100100000, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
 --- !u!4 &4935645793584098519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2199506581164035004, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
   m_PrefabInstance: {fileID: 6555226923760461675}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6189778083501942693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1089407634356830414, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
+  m_PrefabInstance: {fileID: 6555226923760461675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1818360608 &7041261623620158023
+PositionConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6189778083501942693}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0.4927389, y: 2.984366, z: -0.7199011}
+  m_TranslationOffset: {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_Active: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 5714565113214589914}
+    weight: 1

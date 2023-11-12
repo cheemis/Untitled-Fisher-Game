@@ -46,6 +46,8 @@ public class InGameUI : MonoBehaviour
         //set intial time
         timeCircle.fillAmount = timeLeft;
         timeCircle.color = gradient.Evaluate(timeLeft);
+
+        drainAmount = 1 / timeToDrain;
     }
 
     // Update is called once per frame
@@ -87,6 +89,8 @@ public class InGameUI : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(false);
         }
         transform.GetChild(transform.childCount - 1).gameObject.SetActive(true);
+
+        scoreTmp.text = "You caught " + score + " fish!";
     }
 
 
@@ -132,12 +136,14 @@ public class InGameUI : MonoBehaviour
 
     public void ResetGame()
     {
-        SceneManager.LoadSceneAsync(0);
+        Debug.Log("clicked reset game");
+        SceneManager.LoadSceneAsync(1);
     }
 
     public void GoBackToMainMenu()
     {
-        
+        Debug.Log("clicked main menun");
+        SceneManager.LoadSceneAsync(0);
     }
 
 }
