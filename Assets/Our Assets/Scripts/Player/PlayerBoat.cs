@@ -193,8 +193,6 @@ public class PlayerBoat : MonoBehaviour
         canControlBoat = false;
         Vector3 originalVelocity = rb.velocity;
 
-        Debug.Log("Started Slowing Down");
-
         while(rb.velocity.magnitude > .1)
         {
             rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, slowDownSpeed * Time.deltaTime);
@@ -202,11 +200,7 @@ public class PlayerBoat : MonoBehaviour
         }
         rb.velocity = Vector3.zero;
 
-        Debug.Log("Finished Slowing Down");
-
         yield return null;
         StartBoat();
     }
-
-
 }

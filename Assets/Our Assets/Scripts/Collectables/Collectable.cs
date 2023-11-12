@@ -32,6 +32,7 @@ public class Collectable : MonoBehaviour
                 this.GetComponent<Collider>().enabled = false;
             }
         }
+        Debug.Log("parent trigger enter");
     }
 
     virtual public void UpdateLockedTarget(Transform newLockedTarget)

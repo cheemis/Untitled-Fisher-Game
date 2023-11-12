@@ -6,6 +6,7 @@ public class FishCollectable : Collectable
 {
     public AudioClip[] sounds;
     private AudioSource audioSource;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +23,32 @@ public class FishCollectable : Collectable
         // play the sound when fish spawns
         audioSource.Play();
         */
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Hook")
+        {
+            Hook hook = other.gameObject.GetComponent<Hook>();
+            if (!hook.HasCaughtFish())
+            {
+                UpdateLockedTarget(other.gameObject.transform);
+                hook.SetCurrentHookTarget(this);
+                this.GetComponent<Collider>().enabled = false;
+
+                anim.SetTrigger("caught");
+            }
+        }
+
+        Debug.Log("child trigger enter");
+
+
     }
 }

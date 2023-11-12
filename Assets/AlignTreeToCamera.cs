@@ -19,6 +19,6 @@ public class AlignTreeToCamera : MonoBehaviour
                                         transform.rotation.eulerAngles.y,
                                         cameraPos.z);
 
-        transform.LookAt(Camera.main.transform.position, Vector3.up);
+        transform.LookAt(lookAtDir, Vector3.up);
     }
 }
