@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enviornment
       objectReference: {fileID: 0}
+    - target: {fileID: 2949442692421808896, guid: 68c9b54007edbc441ad69d142942fa9a, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5801103253202893161, guid: 68c9b54007edbc441ad69d142942fa9a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
