@@ -56,6 +56,7 @@ public class PlayerBoat : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         hook = GetComponentInChildren<PlayerHook>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -97,6 +98,8 @@ public class PlayerBoat : MonoBehaviour
     private void EndGame()
     {
         gameOver = true;
+        anim.SetFloat("speed", 0);
+        anim.SetFloat("turning", 0);
     }
 
 
@@ -108,11 +111,15 @@ public class PlayerBoat : MonoBehaviour
     private void ReadInput()
     {
         //rotate boat left/right
-        RotatePlayer(Input.GetAxis("Horizontal"));
+        float horizontalSpeed = Input.GetAxis("Horizontal");
+        anim.SetFloat("turning", horizontalSpeed);
+        RotatePlayer(horizontalSpeed);
 
 
         //move boat forward/backwards input
-        MovePlayer(Input.GetAxis("Vertical"));
+        float verticalSpeed = Input.GetAxis("Vertical");
+        anim.SetFloat("speed", verticalSpeed);
+        MovePlayer(verticalSpeed);
 
         //Debug.Log("current velocity: " + rb.velocity.magnitude);
     }

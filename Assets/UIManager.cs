@@ -7,30 +7,27 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject creditsPanel;
+    public GameObject titleScreen;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        OnCloseCredits();
     }
 
     public void OnPlayGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadSceneAsync(1);
     }
 
     public void OnOpenCredits()
     {
         creditsPanel.SetActive(true);
+        titleScreen.SetActive(false);
     }
 
     public void OnCloseCredits()
     {
         creditsPanel.SetActive(false);
+        titleScreen.SetActive(true);
     }
 }
