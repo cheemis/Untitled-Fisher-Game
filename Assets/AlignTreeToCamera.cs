@@ -16,7 +16,7 @@ public class AlignTreeToCamera : MonoBehaviour
         Vector3 cameraPos = Camera.main.transform.position;
 
         Vector3 lookAtDir = new Vector3(cameraPos.x,
-                                        transform.rotation.eulerAngles.y,
+                                        transform.position.y,
                                         cameraPos.z);
 
         transform.LookAt(lookAtDir, Vector3.up);
