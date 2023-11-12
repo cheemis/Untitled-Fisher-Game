@@ -81,6 +81,10 @@ PrefabInstance:
       value: TrashCollectable 3
       objectReference: {fileID: 0}
     - target: {fileID: 3602508269829013010, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
+      propertyPath: m_Drag
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602508269829013010, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}

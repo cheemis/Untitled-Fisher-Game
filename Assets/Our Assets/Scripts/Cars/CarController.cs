@@ -53,7 +53,7 @@ public class CarController : MonoBehaviour
 
     public void MoveCar()
     {
-        Debug.Log(currentTargetIndex);
+        //Debug.Log(currentTargetIndex);
         agent.SetDestination(currentTarget.position);
         float distance = Vector3.Distance(agent.transform.position, currentTarget.position);
         if (distance > 1) return;
@@ -84,11 +84,11 @@ public class CarController : MonoBehaviour
 
         TrashCollectable droppedTrash = Instantiate(trashPrefab, trashSpawner.position, Quaternion.identity).GetComponent<TrashCollectable>();
         droppedTrash.ThrowTrash(dropForce);
-        Debug.Log(droppedTrash.trashType);
-        if (droppedTrash.trashType == TrashCollectable.TrashType.Large)
-        {
-            canDropTrashes = false;
-        }
+        //Debug.Log(droppedTrash.trashType);
+        //if (droppedTrash.trashType == TrashCollectable.TrashType.Large)
+        //{
+        //    canDropTrashes = false;
+        //}
 
     }
 

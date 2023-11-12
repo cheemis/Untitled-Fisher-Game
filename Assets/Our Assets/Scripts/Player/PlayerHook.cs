@@ -186,7 +186,10 @@ public class PlayerHook : MonoBehaviour
             {
                 FishingGameManager.OnCollectFish();
             }
-
+            else if (currentCollectable is TrashCollectable)
+            {
+                Debug.Log("Player Dropped Trash");
+            }
             currentCollectable.DestroyCollectable();
             currentCollectable = null;
         }

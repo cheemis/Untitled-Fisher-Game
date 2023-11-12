@@ -28,10 +28,11 @@ public class TrashManager : UnitySingleton<TrashManager>
             randomWeight -= trash.weight;
             if (randomWeight < 0)
             {
-                Debug.Log("Trash Index: " + i);
+                //Debug.Log("Trash Index: " + i);
                 return trashesInResource[i];
             }
         }
         return null;
     }
+
 }
