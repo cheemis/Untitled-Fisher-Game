@@ -159,14 +159,7 @@ public class Hook : MonoBehaviour
 
     public void SetCurrentHookTarget(Collectable newHookTarget)
     {
-        if (newHookTarget is FishCollectable)
-        {
-            AudioManager.Instance.Play("CollectFish");
-        }
-        else if (newHookTarget is TrashCollectable)
-        {
-            AudioManager.Instance.Play("CollectTrash");
-        }
+
         caughtCollectable = newHookTarget;
     }
 

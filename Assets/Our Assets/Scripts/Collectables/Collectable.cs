@@ -36,7 +36,7 @@ public class Collectable : MonoBehaviour
     }
 
     virtual public void UpdateLockedTarget(Transform newLockedTarget)
-    {
+    { 
         hooked = true;
         lockedTarget = newLockedTarget;
         

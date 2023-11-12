@@ -48,7 +48,15 @@ public class FishCollectable : Collectable
         }
 
         Debug.Log("child trigger enter");
+    }
 
+    public override void UpdateLockedTarget(Transform newLockedTarget)
+    {
+        if (hooked)
+        {
+            AudioManager.Instance.Play("CollectFish");
+        }
+        base.UpdateLockedTarget(newLockedTarget);
 
     }
 }
