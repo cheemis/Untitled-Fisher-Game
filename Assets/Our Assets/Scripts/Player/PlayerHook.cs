@@ -175,6 +175,7 @@ public class PlayerHook : MonoBehaviour
     public void SetCurrentCollectable(Collectable caughtCollectable)
     {
         currentCollectable = caughtCollectable;
+        FishingGameManager.OnCaughtSomething();
     }
 
     public void EnterDropOff()

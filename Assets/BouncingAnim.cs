@@ -4,14 +4,39 @@ using UnityEngine;
 
 public class BouncingAnim : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Animator anim;
+
+    private void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
+        FishingGameManager.collectFish += StopBoundingHouse;
+        FishingGameManager.collectTrash += StopBoundingHouse;
+        FishingGameManager.gameOver += StopBoundingHouse;
+        FishingGameManager.caughSomething += BouceHouse;
     }
+
+    private void OnDisable()
+    {
+        FishingGameManager.collectFish -= StopBoundingHouse;
+        FishingGameManager.collectTrash -= StopBoundingHouse;
+        FishingGameManager.gameOver += StopBoundingHouse;
+        FishingGameManager.caughSomething += BouceHouse;
+    }
+
+
+    public void BouceHouse()
+    {
+        anim.SetBool("hasFish", true);
+    }
+
+    public void StopBoundingHouse()
+    {
+        anim.SetBool("hasFish", false);
+    }
+
+
 }
