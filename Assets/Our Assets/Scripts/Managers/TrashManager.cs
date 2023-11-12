@@ -19,7 +19,7 @@ public class TrashManager : UnitySingleton<TrashManager>
         {
             weightedTotal += t.GetComponent<TrashCollectable>().weight;
         }
-        Debug.Log("Total Weight: " + weightedTotal);
+        //Debug.Log("Total Weight: " + weightedTotal);
         int randomWeight = Random.Range(0, weightedTotal) % weightedTotal;
 
         for (int i = 0; i< trashesInResource.Count; i++)
