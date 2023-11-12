@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrashManager : UnitySingleton<TrashManager>
 {
     public List<GameObject> trashesInResource = new List<GameObject>();
+    public Transform pond;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,8 +14,24 @@ public class TrashManager : UnitySingleton<TrashManager>
 
     public GameObject ReturnRandomTrash()
     {
-        int trashIndex = Random.Range(0, trashesInResource.Count);
-        Debug.Log("Trash Index: " + trashIndex);
-        return trashesInResource[trashIndex];
+        int weightedTotal = 0;
+        foreach (var t in trashesInResource)
+        {
+            weightedTotal += t.GetComponent<TrashCollectable>().weight;
+        }
+        Debug.Log("Total Weight: " + weightedTotal);
+        int randomWeight = Random.Range(0, weightedTotal) % weightedTotal;
+
+        for (int i = 0; i< trashesInResource.Count; i++)
+        {
+           TrashCollectable trash = trashesInResource[i].GetComponent<TrashCollectable>();
+            randomWeight -= trash.weight;
+            if (randomWeight < 0)
+            {
+                Debug.Log("Trash Index: " + i);
+                return trashesInResource[i];
+            }
+        }
+        return null;
     }
 }

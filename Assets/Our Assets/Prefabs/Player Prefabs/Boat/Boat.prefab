@@ -14608,6 +14608,7 @@ MonoBehaviour:
   rotationSpeed: 100
   maxRotationSpeed: 20
   slowDownSpeed: 50
+  hook: {fileID: 0}
 --- !u!65 &1281763227066581878
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14672,7 +14673,6 @@ GameObject:
   - component: {fileID: 8157262074982418531}
   - component: {fileID: 4684366155390138946}
   - component: {fileID: 4852395154719553398}
-  - component: {fileID: 8215039297410546847}
   - component: {fileID: 4344175363916405495}
   m_Layer: 0
   m_Name: Ojisan
@@ -14746,28 +14746,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8215039297410546847
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5978984031140817635}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &4344175363916405495
 MonoBehaviour:
   m_ObjectHideFlags: 0
