@@ -16,6 +16,9 @@ public class Hook : MonoBehaviour
     private Vector3 targetPosition = Vector3.zero;
     private Collectable caughtCollectable = null;
 
+    //components
+    private LineRenderer line;
+
     enum CastingStates
     {
         casting,
@@ -49,6 +52,15 @@ public class Hook : MonoBehaviour
         this.latchingPoint = latchingPoint;
         this.HoldingPosition = holdingPosition;
         this.gameObject.SetActive(false);
+
+        line = GetComponentInChildren<LineRenderer>();
+        line.positionCount = 2;
+
+        line.startWidth = 0.1f;
+        line.endWidth = 0.1f;
+
+        DrawLine();
+
     }
 
 
@@ -71,6 +83,7 @@ public class Hook : MonoBehaviour
                 ReelInHook();
                 break;
         }
+        DrawLine();
     }
 
 
@@ -84,6 +97,12 @@ public class Hook : MonoBehaviour
             */
 
         }
+    }
+
+    private void DrawLine()
+    {
+        line.SetPosition(0, transform.position); // Start position is the current object's position
+        line.SetPosition(1, latchingPoint.transform.position);
     }
 
     // ===================================== //
