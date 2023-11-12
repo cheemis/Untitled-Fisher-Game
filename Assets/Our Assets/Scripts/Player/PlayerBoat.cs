@@ -96,7 +96,6 @@ public class PlayerBoat : MonoBehaviour
         float y = 0;
         float z = 0;
         Vector3 newVelocity = Vector3.zero;
-
         //apply the direction held
         rb.AddForce(transform.forward * direction * acceleration * Time.deltaTime, ForceMode.Force);
         newVelocity = rb.velocity;
