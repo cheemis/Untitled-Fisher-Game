@@ -30,10 +30,11 @@ public class Collectable : MonoBehaviour
         }
     }
 
-    public void UpdateLockedTarget(Transform newLockedTarget)
+    virtual public void UpdateLockedTarget(Transform newLockedTarget)
     {
         hooked = true;
         lockedTarget = newLockedTarget;
+        
     }
 
     public void DestroyCollectable()
