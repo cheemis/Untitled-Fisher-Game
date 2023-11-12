@@ -12,7 +12,12 @@ public class InGameUI : MonoBehaviour
     private float timeLeft = 1;
     [SerializeField]
     private float timeToDrain = 45f;
-    private float drainAmount = .05f;
+    [SerializeField]
+    private float minTimeToDrain = 45f;
+    [SerializeField]
+    private float timeLossPerFish = .05f;
+    [SerializeField]
+    private float timeLossPerTrash = .1f;
     [SerializeField]
     private float timeForTrashCollecting = .5f;
     [SerializeField]
@@ -48,8 +53,6 @@ public class InGameUI : MonoBehaviour
         //set intial time
         timeCircle.fillAmount = timeLeft;
         timeCircle.color = gradient.Evaluate(timeLeft);
-
-        drainAmount = 1 / timeToDrain;
     }
 
     // Update is called once per frame
@@ -58,11 +61,6 @@ public class InGameUI : MonoBehaviour
         if(!gameOver)
         {
             DecreaseTime();
-        }
-
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            IncreaseScore();
         }
     }
 
@@ -111,7 +109,7 @@ public class InGameUI : MonoBehaviour
 
     private void DecreaseTime()
     {
-        timeLeft -= drainAmount * Time.deltaTime;
+        timeLeft -= 1/timeToDrain * Time.deltaTime;
         timeLeft = timeLeft < 0 ? 0: timeLeft; // clamp value
 
         timeCircle.fillAmount = Mathf.Lerp(timeCircle.fillAmount,
@@ -125,9 +123,16 @@ public class InGameUI : MonoBehaviour
         }
     }
 
+    private void ChangeDrainAmount(float timeLoss)
+    {
+        timeToDrain -= timeLoss;
+        timeToDrain = Mathf.Clamp(timeToDrain, minTimeToDrain, timeToDrain + 1);
+    }
+
     public void AddTrashTime()
     {
         timeLeft += timeForTrashCollecting;
+        ChangeDrainAmount(timeLossPerTrash);
     }
 
 
@@ -143,7 +148,9 @@ public class InGameUI : MonoBehaviour
         tmp.text = "X " + score;
 
         //reset time
-        timeLeft = 1 + drainAmount; // over shoot on purpose
+        timeLeft = 1 + 1/timeToDrain; // over shoot on purpose
+
+        ChangeDrainAmount(timeLossPerFish);
     }
 
     // ===================================== //
