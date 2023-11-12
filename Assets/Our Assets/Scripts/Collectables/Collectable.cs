@@ -24,9 +24,13 @@ public class Collectable : MonoBehaviour
     {
         if (other.gameObject.tag == "Hook")
         {
-            UpdateLockedTarget(other.gameObject.transform);
-            other.gameObject.GetComponent<Hook>().SetCurrentHookTarget(this);
-            this.GetComponent<Collider>().enabled = false;
+            Hook hook = other.gameObject.GetComponent<Hook>();
+            if(!hook.HasCaughtFish())
+            {
+                UpdateLockedTarget(other.gameObject.transform);
+                hook.SetCurrentHookTarget(this);
+                this.GetComponent<Collider>().enabled = false;
+            }
         }
     }
 

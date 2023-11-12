@@ -9,7 +9,7 @@ public class FishCollectable : Collectable
 
     // Start is called before the first frame update
     void Start()
-    {
+    {/*
         audioSource = GetComponent<AudioSource>();
 
         // play a random sound when spawned
@@ -21,6 +21,7 @@ public class FishCollectable : Collectable
 
         // play the sound when fish spawns
         audioSource.Play();
+        */
     }
 
     // Update is called once per frame

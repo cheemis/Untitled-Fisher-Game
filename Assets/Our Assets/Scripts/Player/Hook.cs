@@ -156,4 +156,9 @@ public class Hook : MonoBehaviour
     {
         caughtCollectable = newHookTarget;
     }
+
+    public bool HasCaughtFish()
+    {
+        return caughtCollectable != null;
+    }
 }
