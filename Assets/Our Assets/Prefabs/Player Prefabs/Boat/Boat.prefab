@@ -14696,6 +14696,7 @@ GameObject:
   - component: {fileID: 4684366155390138946}
   - component: {fileID: 4852395154719553398}
   - component: {fileID: 4344175363916405495}
+  - component: {fileID: 4832243026553015382}
   m_Layer: 0
   m_Name: Ojisan
   m_TagString: Untagged
@@ -14782,6 +14783,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: -90, z: 0}
+--- !u!95 &4832243026553015382
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5978984031140817635}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be2b54a8de651e04ca3a06edd461412b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6016239393807243532
 GameObject:
   m_ObjectHideFlags: 0
