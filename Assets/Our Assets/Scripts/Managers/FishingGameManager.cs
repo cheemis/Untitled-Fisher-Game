@@ -14,10 +14,13 @@ public class FishingGameManager : MonoBehaviour
     public static event UnityAction collectTrash;
     public static void OnCollectTrash() => collectTrash?.Invoke();
 
-
     //Game over condition
     public static event UnityAction gameOver;
     public static void OnGameOver() => gameOver?.Invoke();
+
+    //Player caught a fish
+    public static event UnityAction caughSomething;
+    public static void OnCaughtSomething() => caughSomething?.Invoke();
 
 
 }

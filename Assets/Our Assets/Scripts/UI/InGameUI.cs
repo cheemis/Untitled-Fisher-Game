@@ -145,7 +145,7 @@ public class InGameUI : MonoBehaviour
     {
         //increase score text
         score++;
-        tmp.text = "X " + score;
+        tmp.text = "x" + score;
 
         //reset time
         timeLeft = 1 + 1/timeToDrain; // over shoot on purpose

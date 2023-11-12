@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 373881448802898878}
   - component: {fileID: 7736522594981517101}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 1634044327743773208}
   - component: {fileID: 8715011859237990525}
   - component: {fileID: 6860836806063963997}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Splashing Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4969,7 +4969,7 @@ GameObject:
   - component: {fileID: 799336468105182500}
   - component: {fileID: 4877158029126363037}
   - component: {fileID: 3036940954060225608}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fish Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5096,6 +5096,14 @@ PrefabInstance:
     - target: {fileID: 2585742816443381541, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
       propertyPath: m_Name
       value: FishCollector
+      objectReference: {fileID: 0}
+    - target: {fileID: 2585742816443381541, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582044391670533702, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4367156162703629500, guid: 8ee6ab09a8bb96c46a54f709829a8d23, type: 3}
