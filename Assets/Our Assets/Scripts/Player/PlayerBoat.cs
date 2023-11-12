@@ -110,16 +110,15 @@ public class PlayerBoat : MonoBehaviour
 
     private void ReadInput()
     {
-        //rotate boat left/right
-        float horizontalSpeed = Input.GetAxis("Horizontal");
-        anim.SetFloat("turning", horizontalSpeed);
-        RotatePlayer(horizontalSpeed);
-
-
         //move boat forward/backwards input
         float verticalSpeed = Input.GetAxis("Vertical");
         anim.SetFloat("speed", verticalSpeed);
         MovePlayer(verticalSpeed);
+
+        //rotate boat left/right
+        float horizontalSpeed = Input.GetAxis("Horizontal");
+        anim.SetFloat("turning", horizontalSpeed);
+        RotatePlayer(horizontalSpeed, 1);
 
         //Debug.Log("current velocity: " + rb.velocity.magnitude);
     }
@@ -143,7 +142,7 @@ public class PlayerBoat : MonoBehaviour
         rb.velocity = new Vector3(x,y,z);
     }
 
-    private void RotatePlayer(float rotationDirection)
+    private void RotatePlayer(float rotationDirection, float direction)
     {
         Quaternion currentRotation = rb.rotation;
 
