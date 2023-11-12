@@ -8,6 +8,8 @@ public class FishCollectable : Collectable
     private AudioSource audioSource;
     Animator anim;
 
+    public GameObject[] effects;
+
     // Start is called before the first frame update
     void Start()
     {/*
@@ -44,6 +46,12 @@ public class FishCollectable : Collectable
                 this.GetComponent<Collider>().enabled = false;
 
                 anim.SetTrigger("caught");
+
+                // hide the effects
+                foreach (GameObject effect in effects)
+                {
+                    effect.SetActive(false);
+                }
             }
         }
 

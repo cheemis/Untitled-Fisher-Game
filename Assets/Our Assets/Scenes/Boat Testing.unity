@@ -6928,6 +6928,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishCollector
       objectReference: {fileID: 0}
+    - target: {fileID: 8485756447872769769, guid: 3c23758001f3d5b479ec645e7759ee52, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715011859237990525, guid: 3c23758001f3d5b479ec645e7759ee52, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9180467234753458612, guid: 3c23758001f3d5b479ec645e7759ee52, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.989655
@@ -12281,6 +12289,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 266668669776358210, guid: 2c7819700b31a2048abe50852aceb63c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 986438387679827465, guid: 2c7819700b31a2048abe50852aceb63c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
