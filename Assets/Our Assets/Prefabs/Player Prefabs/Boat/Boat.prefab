@@ -15194,6 +15194,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1059374811728361377, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1454313455672588485, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
       propertyPath: m_Name
       value: Hook Container
@@ -15249,6 +15253,18 @@ PrefabInstance:
     - target: {fileID: 2469753805875686875, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.7353668
+      objectReference: {fileID: 0}
+    - target: {fileID: 2783391268468892250, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 11bf91a08aab3473ba83e38ed16ef47f, type: 3}
+    - target: {fileID: 4722521856654499508, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a6317e514164f4e4796d83aef671875c, type: 3}
+    - target: {fileID: 7215811865271873714, guid: 361ff08bce2815748bfb5d0b2c64d314, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

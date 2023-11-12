@@ -16,6 +16,9 @@ public class Hook : MonoBehaviour
     private Vector3 targetPosition = Vector3.zero;
     private Collectable caughtCollectable = null;
 
+    //components
+    private LineRenderer line;
+
     enum CastingStates
     {
         casting,
@@ -49,6 +52,15 @@ public class Hook : MonoBehaviour
         this.latchingPoint = latchingPoint;
         this.HoldingPosition = holdingPosition;
         this.gameObject.SetActive(false);
+
+        line = GetComponentInChildren<LineRenderer>();
+        line.positionCount = 2;
+
+        line.startWidth = 0.1f;
+        line.endWidth = 0.1f;
+
+        DrawLine();
+
     }
 
 
@@ -58,6 +70,7 @@ public class Hook : MonoBehaviour
         {
             //casting and trying to hit sometime
             case CastingStates.casting:
+
                 SendOutHook();
                 break;
 
@@ -68,9 +81,11 @@ public class Hook : MonoBehaviour
             
             //reeling back towards the boat
             case CastingStates.reeling:
+
                 ReelInHook();
                 break;
         }
+        DrawLine();
     }
 
 
@@ -86,6 +101,12 @@ public class Hook : MonoBehaviour
         }
     }
 
+    private void DrawLine()
+    {
+        line.SetPosition(0, transform.position); // Start position is the current object's position
+        line.SetPosition(1, latchingPoint.transform.position);
+    }
+
     // ===================================== //
     // ====== START CASTING FUNCTIONS ====== //
     // ===================================== //
@@ -93,6 +114,7 @@ public class Hook : MonoBehaviour
 
     public void StartCasting(Vector3 targetPosition)
     {
+
         //reset variables
         caughtCollectable = null;
         castingState = CastingStates.casting;
@@ -115,6 +137,7 @@ public class Hook : MonoBehaviour
 
     private void SendOutHook()
     {
+        AudioManager.Instance.Play("ShootFishPole");
         //give up condition
         if (targetPosition == Vector3.zero || Vector3.Distance(transform.position, targetPosition) < .25f)
         {
@@ -131,6 +154,7 @@ public class Hook : MonoBehaviour
 
     private void ReelInHook()
     {
+        AudioManager.Instance.Play("ReelFishPole");
         transform.position = Vector3.Lerp(transform.position, latchingPoint.transform.position, reelSpeed * Time.deltaTime);
 
         //check if returned home
@@ -154,6 +178,7 @@ public class Hook : MonoBehaviour
 
     public void SetCurrentHookTarget(Collectable newHookTarget)
     {
+
         caughtCollectable = newHookTarget;
     }
 

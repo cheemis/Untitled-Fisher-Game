@@ -83,6 +83,7 @@ public class CarController : MonoBehaviour
         GameObject trashPrefab = TrashManager.Instance.ReturnRandomTrash();
 
         TrashCollectable droppedTrash = Instantiate(trashPrefab, trashSpawner.position, Quaternion.identity).GetComponent<TrashCollectable>();
+        AudioManager.Instance.Play("DropTrash", 0.8f);
         droppedTrash.ThrowTrash(dropForce);
         //Debug.Log(droppedTrash.trashType);
         //if (droppedTrash.trashType == TrashCollectable.TrashType.Large)
