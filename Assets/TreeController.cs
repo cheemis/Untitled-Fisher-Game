@@ -6,6 +6,9 @@ public class TreeController : MonoBehaviour
 {
     private float lifeTime = 10f;
 
+    public float lifeMax = 60f;
+    public float lifeMin = 15f;
+
     public Sprite[] sprites;
     public int currentStage = 0;
     
@@ -13,7 +16,7 @@ public class TreeController : MonoBehaviour
     void Start()
     {
         // randomize the lifetime
-        lifeTime = Random.Range(5f, 15f);
+        lifeTime = Random.Range(lifeMin, lifeMax);
         // lifeTime = 1f;
     }
 
@@ -34,7 +37,15 @@ public class TreeController : MonoBehaviour
         {
             // check if object is off screen
             Vector3 vpPos = Camera.main.WorldToViewportPoint(transform.position);
-            bool isVisible = vpPos.x >= 0f && vpPos.x <= 1f && vpPos.y >= 0f && vpPos.y <= 1f && vpPos.z > 0f;
+
+            // check for edge
+            // bool isVisible = vpPos.x >= 0f && vpPos.x <= 1f && vpPos.y >= 0f && vpPos.y <= 1f && vpPos.z > 0f;
+
+            // check for edge also considering the size of the object
+            float size = 60f;
+            bool isVisible = vpPos.x >= -size && vpPos.x <= 1f + size && vpPos.y >= -size && vpPos.y <= 1f + size && vpPos.z > 0f;
+
+
             if (!isVisible)
             {
                 // change to the next sprite
@@ -44,7 +55,7 @@ public class TreeController : MonoBehaviour
                 GetComponent<SpriteRenderer>().sprite = sprites[currentStage];
 
                 // reset the life time
-                lifeTime = Random.Range(5f, 15f);
+                lifeTime = Random.Range(lifeMin, lifeMax);
             }
         }
     }
