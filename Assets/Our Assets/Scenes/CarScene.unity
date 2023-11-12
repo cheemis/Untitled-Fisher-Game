@@ -2235,7 +2235,6 @@ GameObject:
   - component: {fileID: 1249184313}
   - component: {fileID: 1249184316}
   - component: {fileID: 1249184315}
-  - component: {fileID: 1249184314}
   m_Layer: 8
   m_Name: Water Plane
   m_TagString: Untagged
@@ -2258,28 +2257,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 611001989}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!64 &1249184314
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249184312}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1249184315
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3292,46 +3269,6 @@ PrefabInstance:
       propertyPath: pond
       value: 
       objectReference: {fileID: 1249184313}
-    - target: {fileID: 2949756717746285770, guid: 46dd4b3a64362a64aa6c7b83da2d9e4e, type: 3}
-      propertyPath: trashSpawners.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2949756717746285770, guid: 46dd4b3a64362a64aa6c7b83da2d9e4e, type: 3}
-      propertyPath: trashSpawners.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2949756717746285770, guid: 46dd4b3a64362a64aa6c7b83da2d9e4e, type: 3}
-      propertyPath: trashSpawners.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2949756717746285770, guid: 46dd4b3a64362a64aa6c7b83da2d9e4e, type: 3}
-      propertyPath: trashSpawners.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2949756717746285770, guid: 46dd4b3a64362a64aa6c7b83da2d9e4e, type: 3}
-      propertyPath: trashSpawners.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2949756717746285770, guid: 46dd4b3a64362a64aa6c7b83da2d9e4e, type: 3}
-      propertyPath: trashesInResource.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2949756717746285770, guid: 46dd4b3a64362a64aa6c7b83da2d9e4e, type: 3}
-      propertyPath: trashesInResource.Array.data[0]
-      value: 
-      objectReference: {fileID: 3508622211446826343, guid: 35e94409d89355d4a975db2dbdfe262f, type: 3}
-    - target: {fileID: 2949756717746285770, guid: 46dd4b3a64362a64aa6c7b83da2d9e4e, type: 3}
-      propertyPath: trashesInResource.Array.data[1]
-      value: 
-      objectReference: {fileID: 3508622211446826343, guid: 1ec77dc447870c44a9d9ed3d9baa79e4, type: 3}
-    - target: {fileID: 2949756717746285770, guid: 46dd4b3a64362a64aa6c7b83da2d9e4e, type: 3}
-      propertyPath: trashesInResource.Array.data[2]
-      value: 
-      objectReference: {fileID: 3508622211446826343, guid: 2cc02f18b311af4469d1db711797c4cf, type: 3}
-    - target: {fileID: 2949756717746285770, guid: 46dd4b3a64362a64aa6c7b83da2d9e4e, type: 3}
-      propertyPath: trashesInResource.Array.data[3]
-      value: 
-      objectReference: {fileID: 3508622211446826343, guid: e94136a35ec2aa245a7477448b524d31, type: 3}
     - target: {fileID: 7982840186817023702, guid: 46dd4b3a64362a64aa6c7b83da2d9e4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 64.47154

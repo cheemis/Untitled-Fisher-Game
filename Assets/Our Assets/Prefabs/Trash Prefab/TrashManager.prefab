@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashesInResource:
-  - {fileID: 3508622211446826343, guid: e94136a35ec2aa245a7477448b524d31, type: 3}
-  - {fileID: 3508622211446826343, guid: 2cc02f18b311af4469d1db711797c4cf, type: 3}
+  - {fileID: 3508622211446826343, guid: 35e94409d89355d4a975db2dbdfe262f, type: 3}
   - {fileID: 3508622211446826343, guid: 1ec77dc447870c44a9d9ed3d9baa79e4, type: 3}
+  - {fileID: 3508622211446826343, guid: 2cc02f18b311af4469d1db711797c4cf, type: 3}
+  - {fileID: 3508622211446826343, guid: e94136a35ec2aa245a7477448b524d31, type: 3}
+  pond: {fileID: 0}
