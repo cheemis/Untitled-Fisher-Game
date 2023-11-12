@@ -42,6 +42,9 @@ public class PlayerBoat : MonoBehaviour
     [SerializeField]
     private PlayerHook hook;
 
+    //managing variables
+    private bool gameOver = false;
+
 
 
     // ================================== //
@@ -58,9 +61,12 @@ public class PlayerBoat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canControlBoat)
+        if(!gameOver)
         {
-            ReadInput();
+            if (canControlBoat)
+            {
+                ReadInput();
+            }
         }
     }
 
@@ -70,6 +76,27 @@ public class PlayerBoat : MonoBehaviour
         {
             hook.EnterDropOff();
         }
+    }
+
+
+
+    // ===================================== //
+    // ===== LISTENING/EVENT FUNCTIONS ===== //
+    // ===================================== //
+
+    private void OnEnable()
+    {
+        FishingGameManager.gameOver += EndGame;
+    }
+
+    private void OnDisable()
+    {
+        FishingGameManager.gameOver -= EndGame;
+    }
+
+    private void EndGame()
+    {
+        gameOver = true;
     }
 
 

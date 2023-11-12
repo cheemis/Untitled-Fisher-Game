@@ -42,6 +42,10 @@ public class PlayerHook : MonoBehaviour
     private GameObject hookGameObject;
     private Hook hook;
 
+    //managing variables
+    [SerializeField]
+    private bool gameOver = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -59,9 +63,35 @@ public class PlayerHook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DisplayHookArrow();
-        PowerUpHook();
+        if(!gameOver)
+        {
+            DisplayHookArrow();
+            PowerUpHook();
+        }
     }
+
+
+
+    // ===================================== //
+    // ===== LISTENING/EVENT FUNCTIONS ===== //
+    // ===================================== //
+
+    private void OnEnable()
+    {
+        FishingGameManager.gameOver += EndGame;
+    }
+
+    private void OnDisable()
+    {
+        FishingGameManager.gameOver -= EndGame;
+    }
+
+    private void EndGame()
+    {
+        gameOver = true;
+        arrowContainer.gameObject.SetActive(false);
+    }
+
 
 
     // ===================================== //
@@ -152,7 +182,7 @@ public class PlayerHook : MonoBehaviour
         if (currentCollectable != null)
         {
             //if a fish was collected, send an event saying a fish was collected
-            if(/*currentCollectable is FishCollectable*/true)
+            if(currentCollectable is FishCollectable)
             {
                 FishingGameManager.OnCollectFish();
             }

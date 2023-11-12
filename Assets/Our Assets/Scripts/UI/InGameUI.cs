@@ -4,12 +4,23 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class InGameUI : MonoBehaviour
 {
     //draining amount
+    private float timeLeft = 1;
     [SerializeField]
-    private float DrainAmount = .1f;
+    private float timeToDrain = 45f;
+    private float drainAmount = .05f;
+    [SerializeField]
+    private Gradient gradient = new Gradient();
+
+    //lerping variables
+    [SerializeField]
+    private float dialLerpAmount = .5f;
+    [SerializeField]
+    private float fillKillAmount = .05f;
 
     //score variables
     private int score;
@@ -17,6 +28,11 @@ public class InGameUI : MonoBehaviour
     //different UI elements
     private Image timeCircle;
     private TextMeshProUGUI tmp;
+    [SerializeField]
+    private TextMeshProUGUI scoreTmp;
+
+    //management variables
+    private bool gameOver = false;
 
 
 
@@ -24,30 +40,104 @@ public class InGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeCircle.GetComponentInChildren<Image>().color = Color.white;
+        timeCircle = GetComponentInChildren<Image>();
         tmp = GetComponentInChildren<TextMeshProUGUI>();
+
+        //set intial time
+        timeCircle.fillAmount = timeLeft;
+        timeCircle.color = gradient.Evaluate(timeLeft);
     }
 
     // Update is called once per frame
     void Update()
     {
-        DecreaseTime();
+        if(!gameOver)
+        {
+            DecreaseTime();
+        }
+
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            IncreaseScore();
+        }
     }
+
+    // ===================================== //
+    // ===== LISTENING/EVENT FUNCTIONS ===== //
+    // ===================================== //
+
+    private void OnEnable()
+    {
+        FishingGameManager.collectFish += IncreaseScore;
+    }
+
+    private void OnDisable()
+    {
+        FishingGameManager.collectFish -= IncreaseScore;
+    }
+
+    private void EndGame()
+    {
+        gameOver = true;
+        timeCircle.fillAmount = 0;
+        FishingGameManager.OnGameOver();
+
+        for (int i = 0; i < transform.childCount - 1; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+        transform.GetChild(transform.childCount - 1).gameObject.SetActive(true);
+    }
+
+
+    // ===================================== //
+    // =========== DIAL FUNCTIONS ========== //
+    // ===================================== //
 
     private void DecreaseTime()
     {
-        float currentTimeAmount = timeCircle.fillAmount;
+        timeLeft -= drainAmount * Time.deltaTime;
+        timeLeft = timeLeft < 0 ? 0: timeLeft; // clamp value
 
-        currentTimeAmount = currentTimeAmount - DrainAmount * Time.deltaTime;
-        currentTimeAmount = currentTimeAmount < 0 ? 0: currentTimeAmount; // clamp value
+        timeCircle.fillAmount = Mathf.Lerp(timeCircle.fillAmount,
+                                           Mathf.Clamp(timeLeft, 0, 1),
+                                           dialLerpAmount * Time.deltaTime);
+        timeCircle.color = gradient.Evaluate(timeCircle.fillAmount);
 
-        timeCircle.fillAmount = currentTimeAmount;
-
+        if(timeCircle.fillAmount < fillKillAmount)
+        {
+            EndGame();
+        }
     }
 
-    private void IncreaseScore()
+
+
+    // ===================================== //
+    // ========= SCORING FUNCTIONS ========= //
+    // ===================================== //
+
+    public void IncreaseScore()
     {
+        //increase score text
         score++;
         tmp.text = "X " + score;
+
+        //reset time
+        timeLeft = 1 + drainAmount; // over shoot on purpose
     }
+
+    // ===================================== //
+    // ========= BUTTONS FUNCTIONS ========= //
+    // ===================================== //
+
+    public void ResetGame()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
+
+    public void GoBackToMainMenu()
+    {
+        
+    }
+
 }
