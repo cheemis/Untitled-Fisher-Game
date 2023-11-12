@@ -82,7 +82,7 @@ MonoBehaviour:
   fishPrefab: {fileID: 6767768132233060513, guid: 3c23758001f3d5b479ec645e7759ee52, type: 3}
   maxFish: 10
   hor: {x: 50, y: -50}
-  vert: {x: 50, y: -50}
+  vert: {x: 50, y: -10}
 --- !u!1 &6925763504404599649
 GameObject:
   m_ObjectHideFlags: 0

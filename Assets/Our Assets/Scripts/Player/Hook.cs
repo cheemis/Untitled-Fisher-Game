@@ -134,7 +134,7 @@ public class Hook : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, latchingPoint.transform.position, reelSpeed * Time.deltaTime);
 
         //check if returned home
-        if (Vector3.Distance(transform.position, latchingPoint.transform.position) < 1f)
+        if (Vector3.Distance(transform.position, latchingPoint.transform.position) < 1.25f)
         {
             StopCasting();
         }
