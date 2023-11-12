@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589e5697872bbc041a0ef92ffaf5b2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDrain: 30
+  timeToDrain: 40
   gradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}
