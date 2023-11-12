@@ -118,9 +118,7 @@ public class PlayerBoat : MonoBehaviour
         //rotate boat left/right
         float horizontalSpeed = Input.GetAxis("Horizontal");
         anim.SetFloat("turning", horizontalSpeed);
-        RotatePlayer(horizontalSpeed, 1);
-
-        //Debug.Log("current velocity: " + rb.velocity.magnitude);
+        RotatePlayer(horizontalSpeed, Mathf.Sign(verticalSpeed));
     }
     
     private void MovePlayer(float direction)
@@ -149,7 +147,7 @@ public class PlayerBoat : MonoBehaviour
         //gradually increase turning speed as you speed up ==== MAGIC NUMBERS ====
         float currentSpeed = Mathf.Clamp(rb.velocity.magnitude / maxSpeed, .25f, 1);
         currentRotationSpeed += rotationSpeed * rotationDirection * currentSpeed;
-        currentRotationSpeed = Mathf.Clamp(currentRotationSpeed, -maxRotationSpeed, maxRotationSpeed) * Time.deltaTime;
+        currentRotationSpeed = Mathf.Clamp(currentRotationSpeed, -maxRotationSpeed, maxRotationSpeed) * direction * Time.deltaTime;
 
         rb.MoveRotation(currentRotation * Quaternion.Euler(0, currentRotationSpeed, 0));
     }
