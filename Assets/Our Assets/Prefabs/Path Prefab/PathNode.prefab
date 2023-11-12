@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7762383260571719104
 Transform:
   m_ObjectHideFlags: 0
@@ -131,4 +131,3 @@ MonoBehaviour:
   dropTrashChance: 0.5
   previousNode: {fileID: 0}
   nextNode: {fileID: 0}
-  canDropTrash: 0

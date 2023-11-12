@@ -34,12 +34,12 @@ public class TrashCollectable : Collectable
         
     }
 
-    public void ThrowTrash()
+    public void ThrowTrash(float force)
     {
         rb = gameObject.GetComponent<Rigidbody>();
         //rb.AddForce(Vector3.right * 100, ForceMode.Impulse);
         Vector3 direction = (TrashManager.Instance.pond.position - transform.position).normalized;
-        rb.velocity = direction * 50;
+        rb.velocity = direction * force;
     }
 
     public override void UpdateLockedTarget(Transform newLockedTarget)

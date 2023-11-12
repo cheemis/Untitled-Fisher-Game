@@ -6,6 +6,9 @@ using UnityEngine.Events;
 
 public class CarController : MonoBehaviour
 {
+    public float dropForce;
+    public enum PathType { Inner, Outer};
+    public PathType pathType;
     public NavMeshAgent agent;
     public bool canDropTrashes = true;
     public Transform trashSpawner;
@@ -15,10 +18,21 @@ public class CarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach( var node in PathManager.Instance.pathNodes )
+        if (pathType == PathType.Inner)
         {
-            targets.Add( node.transform );
+            foreach (var node in PathManager.Instance.InnerpathNodes)
+            {
+                targets.Add(node.transform);
+            }
         }
+        else if (pathType == PathType.Outer)
+        {
+            foreach (var node in PathManager.Instance.OuterpathNodes)
+            {
+                targets.Add(node.transform);
+            }
+        }
+
         currentTargetIndex = 0;
         currentTarget = targets[currentTargetIndex];
         
@@ -39,7 +53,7 @@ public class CarController : MonoBehaviour
 
     public void MoveCar()
     {
-        //Debug.Log(currentTargetIndex);
+        Debug.Log(currentTargetIndex);
         agent.SetDestination(currentTarget.position);
         float distance = Vector3.Distance(agent.transform.position, currentTarget.position);
         if (distance > 1) return;
@@ -47,9 +61,13 @@ public class CarController : MonoBehaviour
         currentTargetIndex++;
         if (currentTargetIndex == targets.Count)
         {
-            currentTargetIndex = 0;
+            CarManager.Instance.OnCarDestory(this);
         }
-        currentTarget = targets[currentTargetIndex];
+        else
+        {
+            currentTarget = targets[currentTargetIndex];
+        }
+
 
     }
 
@@ -65,7 +83,7 @@ public class CarController : MonoBehaviour
         GameObject trashPrefab = TrashManager.Instance.ReturnRandomTrash();
 
         TrashCollectable droppedTrash = Instantiate(trashPrefab, trashSpawner.position, Quaternion.identity).GetComponent<TrashCollectable>();
-        droppedTrash.ThrowTrash();
+        droppedTrash.ThrowTrash(dropForce);
         Debug.Log(droppedTrash.trashType);
         if (droppedTrash.trashType == TrashCollectable.TrashType.Large)
         {

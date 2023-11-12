@@ -139,6 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ebc222f5ec01a40be0a9491337d388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropForce: 70
+  pathType: 1
   agent: {fileID: 6876642791039592413}
   canDropTrashes: 1
   trashSpawner: {fileID: 5382470718148734824}
@@ -174,7 +176,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
+  m_Speed: 20
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
