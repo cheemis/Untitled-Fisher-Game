@@ -14,6 +14,8 @@ public class InGameUI : MonoBehaviour
     private float timeToDrain = 45f;
     private float drainAmount = .05f;
     [SerializeField]
+    private float timeForTrashCollecting = .5f;
+    [SerializeField]
     private Gradient gradient = new Gradient();
 
     //lerping variables
@@ -71,11 +73,13 @@ public class InGameUI : MonoBehaviour
     private void OnEnable()
     {
         FishingGameManager.collectFish += IncreaseScore;
+        FishingGameManager.collectTrash += AddTrashTime;
     }
 
     private void OnDisable()
     {
         FishingGameManager.collectFish -= IncreaseScore;
+        FishingGameManager.collectTrash -= AddTrashTime;
     }
 
     private void EndGame()
@@ -112,6 +116,11 @@ public class InGameUI : MonoBehaviour
         {
             EndGame();
         }
+    }
+
+    public void AddTrashTime()
+    {
+        timeLeft += timeForTrashCollecting;
     }
 
 

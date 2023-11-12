@@ -10,6 +10,10 @@ public class FishingGameManager : MonoBehaviour
     public static event UnityAction collectFish;
     public static void OnCollectFish() => collectFish?.Invoke();
 
+    //collecting trash
+    public static event UnityAction collectTrash;
+    public static void OnCollectTrash() => collectTrash?.Invoke();
+
 
     //Game over condition
     public static event UnityAction gameOver;
