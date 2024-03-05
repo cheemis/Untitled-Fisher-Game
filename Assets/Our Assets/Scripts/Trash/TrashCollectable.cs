@@ -46,7 +46,7 @@ public class TrashCollectable : Collectable
     {
         if (hooked)
         {
-            //AudioManager.Instance.Play("CollectTrash");
+            AudioManager.Instance.Play("CollectTrash");
         }
         base.UpdateLockedTarget(newLockedTarget);
         transform.localScale *= 0.5f;

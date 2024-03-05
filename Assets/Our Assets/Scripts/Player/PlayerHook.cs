@@ -182,7 +182,7 @@ public class PlayerHook : MonoBehaviour
     {
         if (currentCollectable != null)
         {
-            //AudioManager.Instance.Play("ReturnFish");
+            AudioManager.Instance.Play("ReturnFish");
             //if a fish was collected, send an event saying a fish was collected
             if (currentCollectable is FishCollectable)
             {

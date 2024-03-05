@@ -137,7 +137,7 @@ public class Hook : MonoBehaviour
 
     private void SendOutHook()
     {
-        //AudioManager.Instance.Play("ShootFishPole");
+        AudioManager.Instance.Play("ShootFishPole");
         //give up condition
         if (targetPosition == Vector3.zero || Vector3.Distance(transform.position, targetPosition) < .25f)
         {
@@ -154,7 +154,7 @@ public class Hook : MonoBehaviour
 
     private void ReelInHook()
     {
-        //AudioManager.Instance.Play("ReelFishPole");
+        AudioManager.Instance.Play("ReelFishPole");
         transform.position = Vector3.Lerp(transform.position, latchingPoint.transform.position, reelSpeed * Time.deltaTime);
 
         //check if returned home

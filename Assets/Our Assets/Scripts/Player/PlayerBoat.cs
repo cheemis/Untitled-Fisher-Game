@@ -163,14 +163,14 @@ public class PlayerBoat : MonoBehaviour
         if(canControlBoat)
         {
             StartCoroutine(SlowDownBoat());
-            //AudioManager.Instance.Stop("MotorBoat");
+            AudioManager.Instance.Stop("MotorBoat");
         }
     }
 
     public void StartBoat()
     {
         canControlBoat = true;
-        //AudioManager.Instance.Play("MotorBoat");
+        AudioManager.Instance.Play("MotorBoat");
     }
 
     public void StartRockingBoat()

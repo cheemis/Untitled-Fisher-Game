@@ -62,7 +62,7 @@ public class FishCollectable : Collectable
     {
         if (hooked)
         {
-           //AudioManager.Instance.Play("CollectFish");
+            AudioManager.Instance.Play("CollectFish");
         }
         base.UpdateLockedTarget(newLockedTarget);
 
