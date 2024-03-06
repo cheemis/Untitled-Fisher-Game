@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{b663b3e2-9efe-4b97-9231-a280d7586f01}">
+	<object class="AudioFile" id="{a5013bbf-de09-4b6a-b832-138e01820f48}">
 		<property name="assetPath">
-			<value>forest-with-small-river-birds-and-nature-field-recording-6735.mp3</value>
+			<value>274052__junggle__water-splash-04.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>24</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>221.11199999999999</value>
+			<value>1.4511666666666667</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3593ea25-9e14-4421-94ee-993643f439b0}</destination>

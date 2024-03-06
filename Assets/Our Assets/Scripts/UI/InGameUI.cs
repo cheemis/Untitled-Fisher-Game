@@ -49,7 +49,7 @@ public class InGameUI : MonoBehaviour
     {
         timeCircle = GetComponentInChildren<Image>();
         tmp = GetComponentInChildren<TextMeshProUGUI>();
-        StartCoroutine(PlayAmbientSound());
+        StartCoroutine(PlayAmbience());
         //set intial time
         timeCircle.fillAmount = timeLeft;
         timeCircle.color = gradient.Evaluate(timeLeft);
@@ -64,13 +64,22 @@ public class InGameUI : MonoBehaviour
         }
     }
 
-    IEnumerator PlayAmbientSound()
+    IEnumerator PlayAmbience()
     {
-        //AudioManager.Instance.Play("Forest");
-        yield return new WaitForSecondsRealtime(30);
-        //AudioManager.Instance.Stop("Forest", true);
-        //AudioManager.Instance.Play("City");
+        FMODAudioManager.Instance.InitializeAmbience(FMODEvents.Instance.ambience);
+        FMODAudioManager.Instance.SetAmbienceParameter("nature_ambience_intensity", 1);
+        FMODAudioManager.Instance.SetAmbienceParameter("city_ambience_intensity", 0);
+        yield return new WaitForSeconds(10);
+        FMODAudioManager.Instance.SetAmbienceParameter("nature_ambience_intensity", 0.5f);
+        FMODAudioManager.Instance.SetAmbienceParameter("city_ambience_intensity", 1);
     }
+    //IEnumerator PlayAmbientSound()
+    //{
+    //    AudioManager.Instance.Play("Forest");
+    //    yield return new WaitForSecondsRealtime(30);
+    //    AudioManager.Instance.Stop("Forest", true);
+    //    AudioManager.Instance.Play("City");
+    //}
     // ===================================== //
     // ===== LISTENING/EVENT FUNCTIONS ===== //
     // ===================================== //

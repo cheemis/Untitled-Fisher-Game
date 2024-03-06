@@ -1276,7 +1276,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 639427368117232405, guid: 68c9b54007edbc441ad69d142942fa9a, type: 3}
+    - {fileID: 2122431993360251005, guid: 68c9b54007edbc441ad69d142942fa9a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1535,12 +1537,40 @@ PrefabInstance:
     m_TransformParent: {fileID: 8412923805654079773}
     m_Modifications:
     - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: ambience.Path
+      value: event:/CityandNatureAmbience
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
       propertyPath: motorBoat.Path
       value: event:/MotorBoat
       objectReference: {fileID: 0}
     - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
       propertyPath: shootPole.Path
       value: event:/Shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: fishSwimming.Path
+      value: event:/BouncingHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: houseBouncing.Path
+      value: event:/BouncingHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: ambience.Guid.Data1
+      value: -1382447113
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: ambience.Guid.Data2
+      value: 1224454773
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: ambience.Guid.Data3
+      value: 1915944836
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: ambience.Guid.Data4
+      value: 611056485
       objectReference: {fileID: 0}
     - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
       propertyPath: motorBoat.Guid.Data1
@@ -1573,6 +1603,38 @@ PrefabInstance:
     - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
       propertyPath: shootPole.Guid.Data4
       value: 672622498
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: fishSwimming.Guid.Data1
+      value: -2143666665
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: fishSwimming.Guid.Data2
+      value: 1154582392
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: fishSwimming.Guid.Data3
+      value: -372673346
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: fishSwimming.Guid.Data4
+      value: 458552845
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: houseBouncing.Guid.Data1
+      value: -2143666665
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: houseBouncing.Guid.Data2
+      value: 1154582392
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: houseBouncing.Guid.Data3
+      value: -372673346
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672093660350230654, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
+      propertyPath: houseBouncing.Guid.Data4
+      value: 458552845
       objectReference: {fileID: 0}
     - target: {fileID: 4046143853680433114, guid: 3990af27abb63e24a9419e93cf163deb, type: 3}
       propertyPath: m_Name
@@ -1814,6 +1876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 999991792}
   - component: {fileID: 999991791}
+  - component: {fileID: 999991793}
   m_Layer: 0
   m_Name: Drop Off Trigger
   m_TagString: Drop Off
@@ -1857,6 +1920,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &999991793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999991790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -2143666665
+      Data2: 1154582392
+      Data3: -372673346
+      Data4: 458552845
+    Path: event:/BouncingHouse
+  Event: 
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1028895713
 GameObject:
   m_ObjectHideFlags: 0

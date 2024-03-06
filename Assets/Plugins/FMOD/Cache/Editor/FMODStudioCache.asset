@@ -1,5 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5507527406466090596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CityandNatureAmbience
+  m_EditorClassIdentifier: 
+  Path: event:/CityandNatureAmbience
+  Guid:
+    Data1: -1382447113
+    Data2: 1224454773
+    Data3: 1915944836
+    Data4: 611056485
+  Banks:
+  - {fileID: 3182413867227415567}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 457914648854196970}
+  - {fileID: 1707529948068690866}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 221112
 --- !u!114 &-4044806569406741709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +44,10 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638452527847384927
+  lastModified: 638453199107547182
   FileSizes:
   - Name: Desktop
-    Value: 892
+    Value: 1162
   Exists: 1
 --- !u!114 &-2035532020327081369
 MonoBehaviour:
@@ -40,7 +69,7 @@ MonoBehaviour:
     Data4: -374653388
   Banks:
   - {fileID: 3321221418115417433}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
@@ -62,7 +91,7 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638452527847374978
+  lastModified: 638453199107527183
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -87,13 +116,91 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 1959516722142577940}
   - {fileID: -2035532020327081369}
+  - {fileID: 1549510393174700236}
+  - {fileID: 5044356218189840362}
+  - {fileID: -5507527406466090596}
   EditorParameters: []
   MasterBanks:
   - {fileID: -476525533032391741}
   StringsBanks:
   - {fileID: -4044806569406741709}
-  cacheTime: 638452541983809015
+  cacheTime: 638453199107787078
   cacheVersion: 131609
+--- !u!114 &457914648854196970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CityandNatureAmbience/city_ambience_intensity
+  m_EditorClassIdentifier: 
+  Name: city_ambience_intensity
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2732927405
+    data2: 673274078
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1549510393174700236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/WaterSplash
+  m_EditorClassIdentifier: 
+  Path: event:/WaterSplash
+  Guid:
+    Data1: 2005170726
+    Data2: 1281149794
+    Data3: -1063430215
+    Data4: 2088889333
+  Banks:
+  - {fileID: 3321221418115417433}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
+--- !u!114 &1707529948068690866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CityandNatureAmbience/nature_ambience_intensity
+  m_EditorClassIdentifier: 
+  Name: nature_ambience_intensity
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4277776472
+    data2: 1732939383
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &1959516722142577940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,10 +243,10 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638452527852575326
+  lastModified: 638453199107506034
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 3188160
   Exists: 1
 --- !u!114 &3321221418115417433
 MonoBehaviour:
@@ -156,8 +263,35 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638452541983809015
+  lastModified: 638453199107787078
   FileSizes:
   - Name: Desktop
-    Value: 330112
+    Value: 441792
   Exists: 1
+--- !u!114 &5044356218189840362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BouncingHouse
+  m_EditorClassIdentifier: 
+  Path: event:/BouncingHouse
+  Guid:
+    Data1: -2143666665
+    Data2: 1154582392
+    Data3: -372673346
+    Data4: 458552845
+  Banks:
+  - {fileID: 3321221418115417433}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5003

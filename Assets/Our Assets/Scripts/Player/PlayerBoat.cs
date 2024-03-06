@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMOD.Studio;
+using FMODUnity;
 public class PlayerBoat : MonoBehaviour
 {
     //this class is the boat that the player drives
@@ -47,6 +48,8 @@ public class PlayerBoat : MonoBehaviour
 
     //motor boat sfx
     EventInstance motorBoatSFX;
+    //DropOff SFX Emitter
+    StudioEventEmitter emitter;
 
     // ================================== //
     // ======= BUILT-IN FUNCTIONS ======= //
@@ -78,10 +81,19 @@ public class PlayerBoat : MonoBehaviour
         if (other.gameObject.tag == "Drop Off")
         {
             hook.EnterDropOff();
+            //emitter = FMODAudioManager.Instance.InitializeFMODEventEmitter(FMODEvents.Instance.houseBouncing, other.gameObject);
+            //emitter.Play();
+
         }
     }
 
-
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Drop Off")
+    //    {
+    //        emitter.Stop();
+    //    }
+    //}
 
     // ===================================== //
     // ===== LISTENING/EVENT FUNCTIONS ===== //
@@ -140,6 +152,21 @@ public class PlayerBoat : MonoBehaviour
 
         //apply new velocity
         rb.velocity = new Vector3(x,y,z);
+        if (direction!=0.0f)
+        {
+            PLAYBACK_STATE playbackState;
+            motorBoatSFX.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                motorBoatSFX.start();
+            }
+        }
+        else
+        {
+            motorBoatSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            //Debug.Log("Boat Stopped");
+        }
+
     }
 
     private void RotatePlayer(float rotationDirection, float direction)
@@ -165,7 +192,7 @@ public class PlayerBoat : MonoBehaviour
         if(canControlBoat)
         {
             StartCoroutine(SlowDownBoat());
-            motorBoatSFX.stop(STOP_MODE.IMMEDIATE);
+
             //AudioManager.Instance.Stop("MotorBoat");
         }
 
@@ -175,9 +202,8 @@ public class PlayerBoat : MonoBehaviour
     {
         canControlBoat = true;
         //AudioManager.Instance.Play("MotorBoat");
-        //PLAYBACK_STATE playbackState;
-        //motorBoatSFX.getPlaybackState(out playbackState)
-        motorBoatSFX.start();
+
+
 
     }
 

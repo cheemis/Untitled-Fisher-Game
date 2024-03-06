@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 2610952128866254867}
   - component: {fileID: 4391201517636802741}
   - component: {fileID: 5150899441314395527}
+  - component: {fileID: 6012492084039791207}
+  - component: {fileID: 5105814083570575631}
   m_Layer: 0
   m_Name: Delivery House
   m_TagString: Untagged
@@ -99,6 +101,49 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6012492084039791207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5466537660127863082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8494f95150f753e4aa8c5f013d1c6376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5105814083570575631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5466537660127863082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2143666665
+      Data2: 1154582392
+      Data3: -372673346
+      Data4: 458552845
+    Path: event:/BouncingHouse
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &2733349236082112778
 PrefabInstance:
   m_ObjectHideFlags: 0

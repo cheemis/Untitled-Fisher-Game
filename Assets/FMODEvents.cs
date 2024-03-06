@@ -8,6 +8,11 @@ public class FMODEvents : UnitySingleton<FMODEvents>
     public EventReference shootPole;
     public EventReference motorBoat;
 
-    
+    [Header("House SFX")]
+    public EventReference houseBouncing;
+
+    [Header("Ambience")]
+    public EventReference ambience;
+
 }
 
