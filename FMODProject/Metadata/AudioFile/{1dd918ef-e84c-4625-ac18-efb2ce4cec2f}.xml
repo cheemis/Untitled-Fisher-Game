@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1dd918ef-e84c-4625-ac18-efb2ce4cec2f}">
+		<property name="assetPath">
+			<value>FishNoise3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>32</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.0282500000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3593ea25-9e14-4421-94ee-993643f439b0}</destination>
+		</relationship>
+	</object>
+</objects>

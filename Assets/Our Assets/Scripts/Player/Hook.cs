@@ -123,7 +123,7 @@ public class Hook : MonoBehaviour
         transform.position = latchingPoint.position;
         this.targetPosition = targetPosition;
 
-
+        FMODAudioManager.Instance.PlayOneShot(FMODEvents.Instance.shootPole, targetPosition);
         Debug.Log("started casting hook");
     }
 
@@ -137,6 +137,7 @@ public class Hook : MonoBehaviour
 
     private void SendOutHook()
     {
+       
         //AudioManager.Instance.Play("ShootFishPole");
         //give up condition
         if (targetPosition == Vector3.zero || Vector3.Distance(transform.position, targetPosition) < .25f)
@@ -144,7 +145,7 @@ public class Hook : MonoBehaviour
             //prepare for idling
             timeToIdle = Time.time + idleTime;
             castingState = CastingStates.idling;
-
+           
             Debug.Log("stopped sending hook");
         }
 

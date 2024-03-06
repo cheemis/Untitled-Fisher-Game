@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{93626be8-9153-4b0d-9637-baba77abed7c}">
+		<property name="assetPath">
+			<value>short-success-sound-glockenspiel-treasure-video-game-6346.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.544</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3593ea25-9e14-4421-94ee-993643f439b0}</destination>
+		</relationship>
+	</object>
+</objects>

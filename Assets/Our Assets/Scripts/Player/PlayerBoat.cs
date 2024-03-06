@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMOD.Studio;
 public class PlayerBoat : MonoBehaviour
 {
     //this class is the boat that the player drives
@@ -45,7 +45,8 @@ public class PlayerBoat : MonoBehaviour
     //managing variables
     private bool gameOver = false;
 
-
+    //motor boat sfx
+    EventInstance motorBoatSFX;
 
     // ================================== //
     // ======= BUILT-IN FUNCTIONS ======= //
@@ -57,6 +58,7 @@ public class PlayerBoat : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         hook = GetComponentInChildren<PlayerHook>();
         anim = GetComponent<Animator>();
+        motorBoatSFX = FMODAudioManager.Instance.CreateFMODEventInstance(FMODEvents.Instance.motorBoat);
     }
 
     // Update is called once per frame
@@ -163,14 +165,20 @@ public class PlayerBoat : MonoBehaviour
         if(canControlBoat)
         {
             StartCoroutine(SlowDownBoat());
+            motorBoatSFX.stop(STOP_MODE.IMMEDIATE);
             //AudioManager.Instance.Stop("MotorBoat");
         }
+
     }
 
     public void StartBoat()
     {
         canControlBoat = true;
         //AudioManager.Instance.Play("MotorBoat");
+        //PLAYBACK_STATE playbackState;
+        //motorBoatSFX.getPlaybackState(out playbackState)
+        motorBoatSFX.start();
+
     }
 
     public void StartRockingBoat()

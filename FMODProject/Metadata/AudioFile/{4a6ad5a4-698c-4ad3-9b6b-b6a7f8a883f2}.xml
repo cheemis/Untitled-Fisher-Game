@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4a6ad5a4-698c-4ad3-9b6b-b6a7f8a883f2}">
+		<property name="assetPath">
+			<value>OjisanShoot.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>32</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.71962499999999996</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3593ea25-9e14-4421-94ee-993643f439b0}</destination>
+		</relationship>
+	</object>
+</objects>
